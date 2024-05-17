@@ -1,18 +1,19 @@
+# Save this as `app.py`
 import streamlit as st
-import tensorflow as tf
-import cv2
-from PIL import Image,ImageOps
+from tensorflow.keras.models import model_from_json
+from tensorflow.keras.preprocessing import image
 import numpy as np
+from PIL import Image
 
 # Streamlit app
-st.title("MNIST Digit Classifier")
+st.title("fashion_mnist")
 
 # Load the model architecture from JSON
-with open("/content/model.json", "r") as json_file:
+with open("/content/model.json") as json_file:
     loaded_model_json = json_file.read()
 
 # Load the model weights
-model.load_weights("/content/drive/MyDrive/Colab Notebooks/model.h5")
+model.load_weights("/content/model.json")
 
 # Compile the model
 model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
