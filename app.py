@@ -1,4 +1,4 @@
- import streamlit as st
+import streamlit as st
 import tensorflow as tf
 import cv2
 from PIL import Image,ImageOps
