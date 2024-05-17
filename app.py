@@ -1,5 +1,6 @@
+# Save this as `app.py`
 import streamlit as st
-from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import model_from_json
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image
@@ -7,11 +8,12 @@ from PIL import Image
 # Streamlit app
 st.title("fashion_mnist")
 
-# Define the model
-model = Sequential()
+# Load the model architecture from JSON
+with open("/content/model.json") as json_file:
+    loaded_model_json = json_file.read()
 
 # Load the model weights
-model.load_weights("/content/model_weights.h5")
+model.load_weights("/content/model.json")
 
 # Compile the model
 model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
