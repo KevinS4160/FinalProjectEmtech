@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 
 # Streamlit app
-st.title("fashion_mnist")
+st.title("Fashion MNIST Classifier")
 
 # Load the model architecture from JSON
 with open("model.json") as json_file:
@@ -21,7 +21,7 @@ model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metri
 uploaded_file = st.file_uploader("Choose an image...", type="png")
 
 if uploaded_file is not None:
-    # Load the image
+   # Load the image
     img = Image.open(uploaded_file).convert('L')
     img = img.resize((28, 28))
     img_array = np.array(img)
@@ -34,5 +34,5 @@ if uploaded_file is not None:
     st.write("Classifying...")
 
     # Predict the class
-    prediction = model.predict(img_array)
-    st.write(f"Predicted Digit: {np.argmax(prediction)}")
+    prediction = loaded_model.predict(img_array)
+    st.write(f"Predicted Class: {np.argmax(prediction)}")
