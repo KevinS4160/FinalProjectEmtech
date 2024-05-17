@@ -3,3 +3,4 @@ tensorflow
 pillow
 numpy
 keras
+tensorflow.keras.models import model_from_json
