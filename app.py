@@ -9,11 +9,11 @@ from PIL import Image
 st.title("Fashion MNIST Classifier")
 
 # Load the model architecture from JSON
-with open("model.json") as json_file:
+with open("cnn_model.json") as json_file:
     loaded_model_json = json_file.read()
 
 # Load the model weights
-model.load_weights("model.json")
+model.load_weights("cnn_model.json")
 
 # Compile the model
 model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
