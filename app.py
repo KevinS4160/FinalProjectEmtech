@@ -1,4 +1,4 @@
-# app.py
+# Save this as `app.py`
 import streamlit as st
 import tensorflow as tf
 from PIL import Image, ImageOps
@@ -12,7 +12,7 @@ st.title("Emerging Technology 2 in CpE")
 st.markdown("""
 Name:
 - Kevin Roi A. Sumaya
-- Daniella Rabang
+- Daniela D. Rabang
 
 Course/Section: CPE019/CPE32S5
 
