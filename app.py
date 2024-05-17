@@ -4,7 +4,6 @@ import cv2
 from PIL import Image,ImageOps
 import numpy as np
 
-@st.cache_resource
 # Streamlit app
 st.title("MNIST Digit Classifier")
 
